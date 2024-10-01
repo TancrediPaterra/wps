@@ -4,11 +4,11 @@ import data from "../Assets/data.json";
 import DiagonaleAree from "./DiagonaleAree";
 
 import BACKGROUND_0 from "../Assets/IMG-BLACK_BACKGROUND.png"
-import BACKGROUND_1 from "../Assets/IMG-PRESENTAZIONE.png"
-import BACKGROUND_2 from "../Assets/IMG-PERCORSI.png"
-import BACKGROUND_3 from "../Assets/IMG-AMBIENTI.png"
-import BACKGROUND_4 from "../Assets/IMG-SISTEMI.png"
-import BACKGROUND_5 from "../Assets/IMG-GRAFICA.png"
+import BACKGROUND_1 from "../Assets/IMG-PRESENTAZIONE.webp"
+import BACKGROUND_2 from "../Assets/IMG-PERCORSI.webp"
+import BACKGROUND_3 from "../Assets/IMG-AMBIENTI.webp"
+import BACKGROUND_4 from "../Assets/IMG-SISTEMI.webp"
+import BACKGROUND_5 from "../Assets/IMG-GRAFICA.webp"
 import MenuLaterale from "./MenuLaterale";
 import ScrollerBox from "./ScrollerBox";
 
