@@ -108,7 +108,7 @@ body {
 }
 
 .opacity-titolo-area{
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
 .titolo-area-intervento:hover{
@@ -233,7 +233,6 @@ body {
     margin-top: 4vh;
     cursor: pointer;
     color: rgb(198,199,200);
-    /*margin-bottom: auto;*/
 }
 
 .open-menu-button:hover{
@@ -248,8 +247,6 @@ body {
     z-index: 1;
     background-color: transparent;
     display: flex;
-    /*justify-content: flex-start;*/
-    /*align-items: flex-start;*/
     padding: 0;
     margin: 0;
 }
@@ -274,7 +271,6 @@ body {
     width: 12.5vw;
     height: 100vh;
     padding-top: 8vh;
-    /*padding: 8vh 2vw 0 2.5vw;*/
     gap: 3.5vh;
     display: flex;
     flex-direction: column;
