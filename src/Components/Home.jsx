@@ -108,7 +108,7 @@ function Home() {
     return <div>
         <div className={"background-image"}></div>
         <div className="logo">
-            <img src="/Assets/logo.png" alt="WPS Multimedia"/>
+            <img src="/Assets/Logo.svg" alt="WPS Multimedia"/>
         </div>
         <DiagonaleCubi floors={data.floors} actualFloor={floor} setFloor={setFloor}/>
         <DiagonaleAree floors={data.floors} actualFloor={floor} setFloor={setFloor}/>

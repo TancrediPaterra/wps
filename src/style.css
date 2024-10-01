@@ -143,11 +143,13 @@ body {
     justify-content: start;
     margin-left: 8vh;
     flex: none;
+    cursor: pointer;
 }
 
 .logo img {
     width: auto;
     height: 25vh;
+
 }
 
 .scroller-box{
