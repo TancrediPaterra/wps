@@ -1,0 +1,17 @@
+<svg
+        version="1.1"
+        width="45.360001"
+        height="31.813334"
+        viewBox="0 0 45.360001 31.813334"
+        xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1.3333333,0,0,-1.3333333,0,31.813333)">
+    <g transform="scale(0.1)">
+      <path
+              d="M 170.203,173.395 0,0 V 65.1797 L 170.078,238.617 340.156,65.1797 V 0 l -147.324,150.234 -22.629,23.161"
+              style="fill:currentColor;fill-opacity:currentOpacity;fill-rule:nonzero;stroke:none" />
+      <path
+              d="m 153.066,81.7656 c 0,9.3946 7.618,17.0078 17.012,17.0078 9.395,0 17,-7.6132 17,-17.0078 0,-9.3867 -7.605,-17.0039 -17,-17.0039 -9.394,0 -17.012,7.6172 -17.012,17.0039"
+              style="fill:currentColor;fill-opacity:currentOpacity;fill-rule:nonzero;stroke:none" />
+    </g>
+  </g>
+</svg>
