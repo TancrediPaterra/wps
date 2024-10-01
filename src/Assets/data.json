@@ -9,7 +9,7 @@
     {
       "floor": 1,
       "areaTitle": "LA WPS",
-      "imgBackgroundOpacity": "0.7",
+      "imgBackgroundOpacity": "0.6",
       "cubeColor":"#1B1B1B",
       "imgCubeSrc": "/Assets/IMG-CUBO_1.png",
       "areaText": "La WPS, fondata nel 1992 a Roma, è ormai un’eccellenza consolidata nel mondo dell’audiovisivo e della progettazione di spazi espositivi, specializzata in ambienti museali, mostre ed eventi multimediali.\nIl nostro studio mira a creare esperienze immersive uniche, unendo sistemi espositivi e divulgativi d’avanguardia a spettacolari effetti visivi, sonori e illuminotecnici."
@@ -19,7 +19,7 @@
     {
       "floor": 2,
       "areaTitle": "PERCORSI E ALLESTIMENTI",
-      "imgBackgroundOpacity": "0.7",
+      "imgBackgroundOpacity": "0.6",
       "cubeColor":"#292929",
       "imgCubeSrc": "/Assets/IMG-CUBO_2.png",
       "areaText": "Progettazione di spazi e percorsi espositivi, progettazione allestimenti, produzione di esecutivi tecnici, computazioni e capitolati."
@@ -27,7 +27,7 @@
     {
       "floor": 3,
       "areaTitle": "AMBIENTI AUDIOVISIVI",
-      "imgBackgroundOpacity": "0.7",
+      "imgBackgroundOpacity": "0.6",
       "cubeColor": "#363636",
       "imgCubeSrc": "/Assets/IMG-CUBO_3.png",
       "areaText": "Progettazione e realizzazione spazi immersivi, produzione di contenuti audiovisivi, videoistallazioni, mapping, multivisioni, ambientazione sonore, light design."
@@ -35,7 +35,7 @@
     {
       "floor": 4,
       "areaTitle": "SISTEMI INTERATTIVI",
-      "imgBackgroundOpacity": "0.7",
+      "imgBackgroundOpacity": "0.6",
       "cubeColor": "#3C3C3C",
       "imgCubeSrc": "/Assets/IMG-CUBO_4.png",
       "areaText": "Progettazione e programmazione apparati interattivi ludico-educativi, ipertesti, ambienti virtuali e sistemi di realtà aumentata."
@@ -43,7 +43,7 @@
     {
       "floor": 5,
       "areaTitle": "GRAFICA E COMUNICAZIONE",
-      "imgBackgroundOpacity": "0.7",
+      "imgBackgroundOpacity": "0.6",
       "cubeColor": "#424242",
       "imgCubeSrc": "/Assets/IMG-CUBO_5.png",
       "areaText": "Progettazione e realizzazione apparati di comunicazione: pannellistica, didascalie, cataloghi, siti web"
