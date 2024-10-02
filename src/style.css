@@ -97,7 +97,10 @@ body {
     width: auto;
 }
 
-.box-titolo-area-intervento{
+.button-titolo-area-intervento{
+    margin: 0;
+    padding: 0;
+    background: transparent;
     width: auto;
     display: flex;
     justify-content: flex-start;
@@ -114,7 +117,7 @@ body {
 }
 
 
-.box-titolo-area-intervento>img{
+.button-titolo-area-intervento>img{
     height: 3.2vh;
     width: 3.2vh;
 }
@@ -192,7 +195,7 @@ body {
 
 .arrow-up.active {
     transform: translateY(-50px);
-    color: rgb(0, 0, 0);
+    color: white;
 }
 
 .arrow-up:not(.opacity-arrow):hover{
@@ -209,7 +212,7 @@ body {
 }
 .arrow-down.active {
     transform: translateY(50px);
-    color: rgb(0, 0, 0);
+    color: white;
 }
 
 .arrow-down:not(.opacity-arrow):hover{

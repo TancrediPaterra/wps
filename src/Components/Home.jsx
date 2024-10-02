@@ -44,21 +44,22 @@ function Home() {
         background.style.opacity= data.floors.find(f => f.floor === floor)?.imgBackgroundOpacity;
         // eslint-disable-next-line
 
-        if(!isMenuOpen){
-            if(precFloor.current<floor) {
-                document.querySelector(".arrow-down").classList.add("active");
-                setTimeout(() => {
-                    document.querySelector(".arrow-down").classList.remove("active");
-                }, 700);
-
-            }
-            else if (precFloor.current>floor){
-                document.querySelector(".arrow-up").classList.add("active");
-                setTimeout(() => {
-                    document.querySelector(".arrow-up").classList.remove("active");
-                }, 700);
-            }
-        }
+        // //animazione arrows
+        // if(!isMenuOpen){
+        //     if(precFloor.current<floor) {
+        //         document.querySelector(".arrow-down").classList.add("active");
+        //         setTimeout(() => {
+        //             document.querySelector(".arrow-down").classList.remove("active");
+        //         }, 700);
+        //
+        //     }
+        //     else if (precFloor.current>floor){
+        //         document.querySelector(".arrow-up").classList.add("active");
+        //         setTimeout(() => {
+        //             document.querySelector(".arrow-up").classList.remove("active");
+        //         }, 700);
+        //     }
+        // }
 
 
         precFloor.current=floor;
