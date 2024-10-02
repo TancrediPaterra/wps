@@ -2,7 +2,7 @@
   "floors": [
     {
       "floor": 0,
-      "imgBackgroundSrc": "/Assets/Black-Background.jpg",
+      "imgBackgroundSrc": "/Assets/Black-Background.webp",
       "imgBackgroundOpacity": 1
     },
 

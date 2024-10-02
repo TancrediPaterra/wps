@@ -14,7 +14,7 @@ function DiagonaleAree({floors, actualFloor, setFloor}){
                     id={floor}
                     name={areaTitle}
                     imgSrc = {imgBackgroundSrc}
-                    setFloor = {() => setFloor}
+                    setFloor = {setFloor}
                     isBoxVisible={actualFloor===floor}
                     text={areaText}
                 />))}

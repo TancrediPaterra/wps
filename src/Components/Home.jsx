@@ -3,31 +3,18 @@ import DiagonaleCubi from "./DiagonaleCubi";
 import data from "../Assets/data.json";
 import DiagonaleAree from "./DiagonaleAree";
 
-import BACKGROUND_0 from "../Assets/IMG-BLACK_BACKGROUND.png"
-import BACKGROUND_1 from "../Assets/IMG-PRESENTAZIONE.webp"
-import BACKGROUND_2 from "../Assets/IMG-PERCORSI.webp"
-import BACKGROUND_3 from "../Assets/IMG-AMBIENTI.webp"
-import BACKGROUND_4 from "../Assets/IMG-SISTEMI.webp"
-import BACKGROUND_5 from "../Assets/IMG-GRAFICA.webp"
 import MenuLaterale from "./MenuLaterale";
 import ScrollerBox from "./ScrollerBox";
 import {Link} from "react-router-dom";
+import Background from "./Background";
 
 
 function Home() {
 
     const [floor, setFloor] = useState(0);
-    const precFloor = useRef(0);
+    const precedentFloor = useRef(0);
     const [isMenuOpen, setIsMenuOpen]= useState(false);
 
-    const backgrounds = {
-        0: BACKGROUND_0,
-        1: BACKGROUND_1,
-        2: BACKGROUND_2,
-        3: BACKGROUND_3,
-        4: BACKGROUND_4,
-        5: BACKGROUND_5
-    };
 
     const maxScroll = window.innerHeight/10; // Numero arbitrario che definisce il massimo dello scroll (puoi personalizzarlo)
     const totalLevels = 5;  // Il numero di fasce di livello che desideri (6 in questo caso)
@@ -35,34 +22,36 @@ function Home() {
     const isThrottling = useRef(false);
 
 
+
     //gestione cambio piano
     useEffect(() => {
         // const urlImg = getImageByFloorId(floor);
-        const background = document.querySelector(".background-image");
-        background.style.background=`#000 url(${backgrounds[floor]}) center/cover no-repeat`;
-        background.style.transition="background-image 0.5s ease-in-out";
-        background.style.opacity= data.floors.find(f => f.floor === floor)?.imgBackgroundOpacity;
-        // eslint-disable-next-line
+        // const background = document.querySelector(".background-image");
+        // background.style.background=`#000 url(${backgrounds[floor]}) center/cover no-repeat`;
+        // background.style.transition="background-image 0.5s ease-in-out";
+        // background.style.opacity= data.floors.find(f => f.floor === floor)?.imgBackgroundOpacity;
+        // // eslint-disable-next-line
 
         // //animazione arrows
-        // if(!isMenuOpen){
-        //     if(precFloor.current<floor) {
-        //         document.querySelector(".arrow-down").classList.add("active");
-        //         setTimeout(() => {
-        //             document.querySelector(".arrow-down").classList.remove("active");
-        //         }, 700);
-        //
-        //     }
-        //     else if (precFloor.current>floor){
-        //         document.querySelector(".arrow-up").classList.add("active");
-        //         setTimeout(() => {
-        //             document.querySelector(".arrow-up").classList.remove("active");
-        //         }, 700);
-        //     }
-        // }
+        if(!isMenuOpen){
+            if(precedentFloor.current<floor) {
+                document.querySelector(".arrow-down").classList.add("active");
+                setTimeout(() => {
+                    document.querySelector(".arrow-down").classList.remove("active");
+                }, 700);
+
+            }
+            else if (precedentFloor.current>floor){
+                document.querySelector(".arrow-up").classList.add("active");
+                setTimeout(() => {
+                    document.querySelector(".arrow-up").classList.remove("active");
+                }, 700);
+            }
+        }
 
 
-        precFloor.current=floor;
+        precedentFloor.current=floor;
+        console.log(floor);
     }, [floor]);
 
     //scroll event handler
@@ -89,7 +78,6 @@ function Home() {
                     isThrottling.current = false;
                 }, 1200);
             }
-            console.log(floor);
         }
 
         // Aggiungi gli event listener per wheel e touchmove
@@ -108,7 +96,8 @@ function Home() {
     }
 
     return <div>
-        <div className={"background-image"}></div>
+        <Background floor={floor} setFloor={setFloor} precedentFloor={precedentFloor}/>
+        {/*<div className={"background-image"}></div>*/}
         <div className="logo" onClick={()=>setFloor(0)}>
                 <img src="/Assets/Logo.svg" alt="WPS Multimedia"/>
         </div>
