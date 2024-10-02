@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import BACKGROUND_0 from "../Assets/IMG-BLACK_BACKGROUND.webp";
 import BACKGROUND_1 from "../Assets/IMG-PRESENTAZIONE.webp";
 import BACKGROUND_2 from "../Assets/IMG-PERCORSI.webp";
@@ -17,39 +17,42 @@ export default function Background({ floor, precedentFloor }) {
         5: BACKGROUND_5
     };
 
+    const previousFloorRef = useRef(floor); // Ref per mantenere il valore precedente di floor
     const [currentImage, setCurrentImage] = useState(backgrounds[floor]);
 
+    // Quando cambia il floor, aggiornare l'immagine immediatamente e avviare l'animazione
     useEffect(() => {
-        if (floor !== precedentFloor) {
-            setCurrentImage(backgrounds[floor]); // Aggiorna subito l'immagine per la nuova animazione
+        console.log("Animazione Back:" + previousFloorRef.current + "  " + floor);
+        if (floor !== previousFloorRef) {
+            setCurrentImage(backgrounds[floor]);
         }
     }, [floor]);
 
     return (
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="sync">
             <motion.div
-                key={precedentFloor} // Usa previousFloor per gestire l'animazione di uscita
-                initial={{ opacity: 0.5, y: precedentFloor < floor ? "100%" : "-100%" }}
+                key={floor} // Usa animatingFloor per evitare problemi di re-render
+                initial={{ opacity: 0.0, y: previousFloorRef.current < floor ? "100%" : "-100%" }}
                 animate={{ opacity: 1, y: "0%" }}
-                exit={{ opacity: 0.5, y: precedentFloor < floor ? "-100%" : "100%" }}
-                transition={{ duration: 0.8 }}
+                exit={{ opacity: 0, y: previousFloorRef.current < floor ? "-100%" : "100%" }}
+                transition={{ duration: 1 }}
+                onExitComplete={() => {
+                    previousFloorRef.current = floor;
+                    console.log("Animazione Back: 2.0" + previousFloorRef.current + "  " + floor);
+
+                    // Aggiorna il previousFloorRef solo dopo che l'animazione è completata
+                }}
                 style={{
                     position: "absolute",
                     top: 0,
                     left: 0,
                     width: "100vw",
                     height: "100vh",
+                    backgroundImage: `url(${currentImage})`,
+                    backgroundSize: "cover",
+                    zIndex: -1
                 }}
             >
-                <div
-                    style={{
-                        backgroundImage: `url(${currentImage})`,
-                        backgroundSize: "cover",
-                        width: "100vw",
-                        height: "100vh",
-                        zIndex: -1,
-                    }}
-                ></div>
             </motion.div>
         </AnimatePresence>
     );

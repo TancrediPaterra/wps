@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useLayoutEffect, useRef, useState} from "react";
 import DiagonaleCubi from "./DiagonaleCubi";
 import data from "../Assets/data.json";
 import DiagonaleAree from "./DiagonaleAree";
@@ -7,6 +7,13 @@ import MenuLaterale from "./MenuLaterale";
 import ScrollerBox from "./ScrollerBox";
 import {Link} from "react-router-dom";
 import Background from "./Background";
+import {AnimatePresence, motion} from "framer-motion";
+import BACKGROUND_0 from "../Assets/IMG-BLACK_BACKGROUND.webp";
+import BACKGROUND_1 from "../Assets/IMG-PRESENTAZIONE.webp";
+import BACKGROUND_2 from "../Assets/IMG-PERCORSI.webp";
+import BACKGROUND_3 from "../Assets/IMG-AMBIENTI.webp";
+import BACKGROUND_4 from "../Assets/IMG-SISTEMI.webp";
+import BACKGROUND_5 from "../Assets/IMG-GRAFICA.webp";
 
 
 function Home() {
@@ -25,34 +32,26 @@ function Home() {
 
     //gestione cambio piano
     useEffect(() => {
-        // const urlImg = getImageByFloorId(floor);
-        // const background = document.querySelector(".background-image");
-        // background.style.background=`#000 url(${backgrounds[floor]}) center/cover no-repeat`;
-        // background.style.transition="background-image 0.5s ease-in-out";
-        // background.style.opacity= data.floors.find(f => f.floor === floor)?.imgBackgroundOpacity;
-        // // eslint-disable-next-line
-
         // //animazione arrows
+        console.log("Animazione Arrow:" + precedentFloor.current + "  " + floor);
         if(!isMenuOpen){
             if(precedentFloor.current<floor) {
                 document.querySelector(".arrow-down").classList.add("active");
                 setTimeout(() => {
                     document.querySelector(".arrow-down").classList.remove("active");
-                }, 700);
+                }, 500);
 
             }
             else if (precedentFloor.current>floor){
                 document.querySelector(".arrow-up").classList.add("active");
                 setTimeout(() => {
                     document.querySelector(".arrow-up").classList.remove("active");
-                }, 700);
+                }, 500);
             }
         }
+        }, [floor]);
 
 
-        precedentFloor.current=floor;
-        console.log(floor);
-    }, [floor]);
 
     //scroll event handler
     useEffect(() => {
@@ -91,12 +90,65 @@ function Home() {
         };
     }, [floor]);
 
+    const backgrounds = {
+        0: BACKGROUND_0,
+        1: BACKGROUND_1,
+        2: BACKGROUND_2,
+        3: BACKGROUND_3,
+        4: BACKGROUND_4,
+        5: BACKGROUND_5
+    };
+
+    const [currentImage, setCurrentImage] = useState(backgrounds[floor]);
+
+    // Quando cambia il floor, aggiornare l'immagine immediatamente e avviare l'animazione
+    useEffect(() => {
+        console.log("Animazione Back:" + precedentFloor.current + "  " + floor);
+        if (floor !== precedentFloor.current) {
+            setCurrentImage(backgrounds[floor]);
+        }
+    }, [floor]);
+
+    useEffect(() => {
+        setTimeout(()=> precedentFloor.current=floor, 1000);
+
+        console.log("AggiornamentoFloor:" + precedentFloor.current + "  " + floor);
+    }, [floor]);
+
+
     function toggleMenu(){
         setIsMenuOpen(!isMenuOpen);
     }
 
     return <div>
-        <Background floor={floor} setFloor={setFloor} precedentFloor={precedentFloor}/>
+        <AnimatePresence mode="sync">
+            <motion.div
+                key={floor} // Usa animatingFloor per evitare problemi di re-render
+                initial={{ opacity: 0.0, y: precedentFloor.current < floor ? "100%" : "-100%" }}
+                animate={{ opacity: 1, y: "0%" }}
+                exit={{ opacity: 0, y: precedentFloor.current < floor ? "-100%" : "100%" }}
+                transition={{ duration: 1 }}
+                onExitComplete={() => {
+                    precedentFloor.current = floor;
+                    console.log("Animazione Back: 2.0" + precedentFloor.current + "  " + floor);
+
+                    // Aggiorna il previousFloorRef solo dopo che l'animazione è completata
+                }}
+                style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100vw",
+                    height: "100vh",
+                    backgroundImage: `url(${currentImage})`,
+                    backgroundSize: "cover",
+                    zIndex: -1
+                }}
+            >
+            </motion.div>
+        </AnimatePresence>
+
+        {/*<Background floor={floor} setFloor={setFloor} precedentFloor={precedentFloor.current}/>*/}
         {/*<div className={"background-image"}></div>*/}
         <div className="logo" onClick={()=>setFloor(0)}>
                 <img src="/Assets/Logo.svg" alt="WPS Multimedia"/>
