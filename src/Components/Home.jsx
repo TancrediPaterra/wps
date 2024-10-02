@@ -11,6 +11,7 @@ import BACKGROUND_4 from "../Assets/IMG-SISTEMI.webp"
 import BACKGROUND_5 from "../Assets/IMG-GRAFICA.webp"
 import MenuLaterale from "./MenuLaterale";
 import ScrollerBox from "./ScrollerBox";
+import {Link} from "react-router-dom";
 
 
 function Home() {
@@ -107,8 +108,8 @@ function Home() {
 
     return <div>
         <div className={"background-image"}></div>
-        <div className="logo">
-            <img src="/Assets/Logo.svg" alt="WPS Multimedia"/>
+        <div className="logo" onClick={()=>setFloor(0)}>
+                <img src="/Assets/Logo.svg" alt="WPS Multimedia"/>
         </div>
         <DiagonaleCubi floors={data.floors} actualFloor={floor} setFloor={setFloor}/>
         <DiagonaleAree floors={data.floors} actualFloor={floor} setFloor={setFloor}/>

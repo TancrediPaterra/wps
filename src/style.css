@@ -94,9 +94,11 @@ body {
 .area-intervento{
     transform: rotate(-45deg);
     transform-origin: 0 0;
+    width: auto;
 }
 
-.titolo-area-intervento{
+.box-titolo-area-intervento{
+    width: auto;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -111,14 +113,15 @@ body {
     opacity: 0.3;
 }
 
-.titolo-area-intervento:hover{
-    color: white;
-    opacity: 1;
-}
 
-.titolo-area-intervento>img{
+.box-titolo-area-intervento>img{
     height: 3.2vh;
     width: 3.2vh;
+}
+
+.area-intervento:hover{
+    color: white;
+    opacity: 1;
 }
 
 .box-testo-comparsa{
@@ -135,7 +138,7 @@ body {
     /*font-size: calc(0.73vh + 1.06vw);*/
 }
 
-.logo {
+.logo{
     position: absolute;
     bottom: 68vh;
     display: flex;

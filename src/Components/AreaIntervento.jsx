@@ -1,10 +1,10 @@
 
 function AreaIntervento({id, name, setFloor, isBoxVisible, text}){
 
-    return <div className={"area-intervento"}>
-        <div className={`titolo-area-intervento ${!isBoxVisible ? "opacity-titolo-area" : ""}`} onClick={setFloor}>
+    return <div className={`area-intervento ${!isBoxVisible ? "opacity-titolo-area" : ""}`}>
+        <div className={`box-titolo-area-intervento`} onClick={setFloor}>
             <img src={"/Assets/BulletCube.png"} alt={"bullet-cube"}/>
-            <div >{name}</div>
+            <div className={`titolo-area-intervento`}>{name}</div>
         </div>
         {isBoxVisible && <div className={"box-testo-comparsa"}>
             {text}

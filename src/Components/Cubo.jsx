@@ -11,7 +11,7 @@ function Cubo({color,id, imgSrc, actualFloor}){
             </div>
         }
         else if(actualFloor === id){
-            return <div className={"cube"} style={{backdropFilter:"brightness(3)"}} id={"cubo-" + id}>
+            return <div className={"cube"} style={{backdropFilter:"brightness(3)", WebkitBackdropFilter: "brightness(3)"}} id={"cubo-" + id}>
             </div>
         }
         else{
