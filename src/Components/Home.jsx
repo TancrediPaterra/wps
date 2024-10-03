@@ -6,6 +6,7 @@ import DiagonaleAree from "./DiagonaleAree";
 
 import MenuLaterale from "./MenuLaterale";
 import ScrollerBox from "./ScrollerBox";
+import {ReactComponent as Logo} from "../Assets/Logo.svg";
 import {AnimatePresence, motion} from "framer-motion";
 import BACKGROUND_0 from "../Assets/IMG-BLACK_BACKGROUND.webp";
 import BACKGROUND_1 from "../Assets/IMG-PRESENTAZIONE.webp";
@@ -150,7 +151,8 @@ function Home({floors, isMenuOpen, toggleMenu}) {
         {/*<Background floor={floor} setFloor={setFloor} precedentFloor={precedentFloor.current}/>*/}
         {/*<div className={"background-image"}></div>*/}
         <div className="logo-grande" onClick={()=>setFloor(0)}>
-                <img src="/src/Assets/Logo.svg" alt="WPS Multimedia"/>
+            <Logo className={"logo-grande-svg"}/>
+                {/*<img src="../Assets/Logo.svg" alt="WPS Multimedia"/>*/}
         </div>
         <DiagonaleCubi floors={floors} actualFloor={floor} setFloor={setFloor}/>
         <DiagonaleAree floors={floors} actualFloor={floor} setFloor={setFloor}/>

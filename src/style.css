@@ -158,10 +158,9 @@ body {
     cursor: pointer;
 }
 
-.logo-grande img {
+.logo-grande-svg {
     width: auto;
     height: 25vh;
-
 }
 
 .scroller-box{
