@@ -77,11 +77,17 @@
     background-clip: border-box;
     transition: clip-path 10s ease;
     background-origin: border-box;
+    cursor: pointer;
+}
+.grid-item:hover div{
+    color:white;
+    font-size: 20px;
+    transition: font-size 0.5s ease-in-out;
 }
 
 .grid-item-content {
     display: flex;
     flex-direction: column;
     gap: 0.5vh;
-    color: white;
+    color: rgb(198,199,200);
 }
