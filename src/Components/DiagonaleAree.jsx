@@ -1,5 +1,5 @@
 import React from "react";
-import AreaIntervento from "./AreaIntervento";
+import AreaInterventoHome from "./AreaInterventoHome";
 import Titolo from "./Titolo";
 
 
@@ -10,7 +10,7 @@ function DiagonaleAree({floors, actualFloor, setFloor}){
         <Titolo show = {() => setFloor(0)} visible={actualFloor===0}/>
         <div className={"diagonale-aree"}>
             {floors.filter(f=>f.floor!==0).map(({areaTitle,imgBackgroundSrc, floor, areaText})=>(
-                <AreaIntervento
+                <AreaInterventoHome
                     id={floor}
                     name={areaTitle}
                     imgSrc = {imgBackgroundSrc}

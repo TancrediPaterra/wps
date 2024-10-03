@@ -1,12 +1,11 @@
-import React, {useEffect, useLayoutEffect, useRef, useState} from "react";
+import '../style.css';
+
+import React, {useEffect, useRef, useState} from "react";
 import DiagonaleCubi from "./DiagonaleCubi";
-import data from "../Assets/data.json";
 import DiagonaleAree from "./DiagonaleAree";
 
 import MenuLaterale from "./MenuLaterale";
 import ScrollerBox from "./ScrollerBox";
-import {Link} from "react-router-dom";
-import Background from "./Background";
 import {AnimatePresence, motion} from "framer-motion";
 import BACKGROUND_0 from "../Assets/IMG-BLACK_BACKGROUND.webp";
 import BACKGROUND_1 from "../Assets/IMG-PRESENTAZIONE.webp";
@@ -16,12 +15,10 @@ import BACKGROUND_4 from "../Assets/IMG-SISTEMI.webp";
 import BACKGROUND_5 from "../Assets/IMG-GRAFICA.webp";
 
 
-function Home() {
+function Home({floors, isMenuOpen, toggleMenu}) {
 
     const [floor, setFloor] = useState(0);
     const precedentFloor = useRef(0);
-    const [isMenuOpen, setIsMenuOpen]= useState(false);
-
 
     const maxScroll = window.innerHeight/10; // Numero arbitrario che definisce il massimo dello scroll (puoi personalizzarlo)
     const totalLevels = 5;  // Il numero di fasce di livello che desideri (6 in questo caso)
@@ -49,6 +46,7 @@ function Home() {
                 }, 500);
             }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         }, [floor]);
 
 
@@ -88,7 +86,10 @@ function Home() {
             window.removeEventListener('wheel', handleScroll);
             window.removeEventListener('touchmove', handleScroll);
         };
-    }, [floor]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    },         // eslint-disable-next-line react-hooks/exhaustive-deps
+        [floor]);
 
     const backgrounds = {
         0: BACKGROUND_0,
@@ -107,20 +108,18 @@ function Home() {
         if (floor !== precedentFloor.current) {
             setCurrentImage(backgrounds[floor]);
         }
-    }, [floor]);
+    },         // eslint-disable-next-line react-hooks/exhaustive-deps
+        [floor]);
 
     useEffect(() => {
         setTimeout(()=> precedentFloor.current=floor, 1000);
 
         console.log("AggiornamentoFloor:" + precedentFloor.current + "  " + floor);
-    }, [floor]);
+    },         // eslint-disable-next-line react-hooks/exhaustive-deps
+        [floor]);
 
 
-    function toggleMenu(){
-        setIsMenuOpen(!isMenuOpen);
-    }
-
-    return <div>
+    return <div className={"home"}>
         <AnimatePresence mode="sync">
             <motion.div
                 key={floor} // Usa animatingFloor per evitare problemi di re-render
@@ -150,11 +149,11 @@ function Home() {
 
         {/*<Background floor={floor} setFloor={setFloor} precedentFloor={precedentFloor.current}/>*/}
         {/*<div className={"background-image"}></div>*/}
-        <div className="logo" onClick={()=>setFloor(0)}>
-                <img src="/Assets/Logo.svg" alt="WPS Multimedia"/>
+        <div className="logo-grande" onClick={()=>setFloor(0)}>
+                <img src="/src/Assets/Logo.svg" alt="WPS Multimedia"/>
         </div>
-        <DiagonaleCubi floors={data.floors} actualFloor={floor} setFloor={setFloor}/>
-        <DiagonaleAree floors={data.floors} actualFloor={floor} setFloor={setFloor}/>
+        <DiagonaleCubi floors={floors} actualFloor={floor} setFloor={setFloor}/>
+        <DiagonaleAree floors={floors} actualFloor={floor} setFloor={setFloor}/>
 
         {isMenuOpen ? <MenuLaterale toggleMenu={toggleMenu}/> : <ScrollerBox floor={floor} setFloor={setFloor} toggleMenu={toggleMenu}/>}
 

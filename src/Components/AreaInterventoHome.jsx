@@ -1,5 +1,5 @@
 
-function AreaIntervento({id, name, setFloor, isBoxVisible, text}){
+function AreaInterventoHome({id, name, setFloor, isBoxVisible, text}){
 
     return <div className={`area-intervento ${!isBoxVisible ? "opacity-titolo-area" : ""}`}>
         <button className={`button-titolo-area-intervento`} onClick={()=>{setFloor(id)}}>
@@ -13,4 +13,4 @@ function AreaIntervento({id, name, setFloor, isBoxVisible, text}){
     </div>
 }
 
-export default AreaIntervento;
+export default AreaInterventoHome;

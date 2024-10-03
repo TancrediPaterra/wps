@@ -48,5 +48,51 @@
       "imgCubeSrc": "/Assets/IMG-CUBO_5.png",
       "areaText": "Progettazione e realizzazione apparati di comunicazione: pannellistica, didascalie, cataloghi, siti web"
     }
-]
+],
+  "lavori": {
+    "percorsi": [
+      {
+        "id": 0,
+        "name": "Museo del Lapidarium",
+        "place": "Corfinio(AQ)",
+        "date": "Settembre 2020",
+        "img": "IMG-GRAFICA.webp"
+      },
+      {
+        "id": 1,
+        "name": "Museo Archeologico Romano",
+        "place": "Positano(NA)",
+        "date": "Ottobre 2018",
+        "img": "IMG-SISTEMI.webp"
+      },
+      {
+        "id": 2,
+        "name": "Museo del Lapidarium",
+        "place": "Corfinio(AQ)",
+        "date": "Settembre 2020",
+        "img": "IMG-SISTEMI.webp"
+      },
+      {
+        "id": 3,
+        "name": "Museo Archeologico Romano",
+        "place": "Positano(NA)",
+        "date": "Ottobre 2018",
+        "img": "IMG-GRAFICA.webp"
+      },
+      {
+        "id": 4,
+        "name": "Museo del Lapidarium",
+        "place": "Corfinio(AQ)",
+        "date": "Settembre 2020",
+        "img": "IMG-GRAFICA.webp"
+      },
+      {
+        "id": 5,
+        "name": "Museo Archeologico Romano",
+        "place": "Positano(NA)",
+        "date": "Ottobre 2018",
+        "img": "IMG-SISTEMI.webp"
+      }
+    ]
+  }
 }
