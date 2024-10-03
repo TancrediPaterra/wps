@@ -183,6 +183,7 @@ body {
 }
 
 .arrow-scroll{
+    margin-top: 50vh;
     display: flex;
     gap: 18px;
     justify-items: center;

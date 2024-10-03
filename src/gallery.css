@@ -82,6 +82,6 @@
 .grid-item-content {
     display: flex;
     flex-direction: column;
-    gap: 2vh;
+    gap: 0.5vh;
     color: white;
 }
