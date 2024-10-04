@@ -15,7 +15,7 @@ function Gallery({ lavori, toggleMenu, isMenuOpen }) {
         "sistemi-interattivi": "SISTEMI INTERATTIVI",
     };
     const titolo = categoria? categorie[categoria].titolo+" • ":"";
-    const imgBackgroundSrc = categoria? categorie[categoria].imgSrc+" • ":"/Assets/BACKGROUND_GALLERY_PERCORSI.webp";
+    const imgBackgroundSrc = categoria? categorie[categoria].imgSrc+" • ":" ";
 
     return (
 
