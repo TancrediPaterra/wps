@@ -49,50 +49,71 @@
       "areaText": "Progettazione e realizzazione apparati di comunicazione: pannellistica, didascalie, cataloghi, siti web"
     }
 ],
-  "lavori": {
-    "percorsi": [
+  "lavori": [
       {
         "id": 0,
-        "name": "Museo del Lapidarium",
+        "name": "Museo-del-Lapidarium",
         "place": "Corfinio(AQ)",
         "date": "Settembre 2020",
-        "img": "IMG-GRAFICA.webp"
+        "img": "IMG-GRAFICA.webp",
+        "text": "L’allestimento del Museo MAR di Positano rispecchia la volontà di valorizzare il sito archeologico nella sua complessità e stratificazione storica. L’allestimento è stato così improntato sulla conservazione del segno stratigrafico e delle modalità di ritrovamento dei reperti. A questo modello espositivo, basato sulla ricostruzioni degli apparati e sull’utilizzo di materiali di scavo, sono stati aggiunti sistemi multimediali di navigazione per investigare gli strepitosi affreschi romani e raccontare il lungo e complesso loro disvelamento. Attraverso dei piccoli display sono state invece descritte tutte le fasi di scavo e restauro dei reperti.",
+        "category": [
+          "percorsi"
+        ]
       },
       {
         "id": 1,
-        "name": "Museo Archeologico Romano",
+        "name": "Museo-Archeologico-Romano",
+        "subName": "Santa Maria Assunta",
         "place": "Positano(NA)",
         "date": "Ottobre 2018",
-        "img": "IMG-SISTEMI.webp"
+        "img": "IMG-SISTEMI.webp",
+        "text": "L’allestimento del Museo Archeologico Romano di Positano è pensato per valorizzare l’antica villa romana e i reperti che raccontano la storia di questo straordinario sito. Il progetto espositivo mira a rispettare la stratificazione storica del luogo, con un’attenzione particolare alla conservazione dei segni archeologici e delle tecniche di scavo utilizzate. All’interno del percorso, sistemi multimediali interattivi e installazioni 3D permettono ai visitatori di esplorare virtualmente gli ambienti della villa, riportando in vita gli antichi affreschi e mosaici, e mostrando il processo di scoperta e restauro. Piccoli schermi informativi forniscono dettagli approfonditi su ogni fase dello scavo, offrendo un’esperienza immersiva che intreccia passato e presente, in un racconto affascinante della storia romana di Positano.",
+        "category": [
+          "percorsi"
+        ]
       },
       {
         "id": 2,
-        "name": "Museo del Lapidarium",
+        "name": "Museo-del-Lapidarium",
         "place": "Corfinio(AQ)",
         "date": "Settembre 2020",
-        "img": "IMG-SISTEMI.webp"
+        "img": "IMG-SISTEMI.webp",
+        "category": [
+          "percorsi"
+        ]
       },
       {
         "id": 3,
-        "name": "Museo Archeologico Romano",
+        "name": "Museo-Archeologico-Romano",
+        "subName": "Santa Maria Assunta",
         "place": "Positano(NA)",
         "date": "Ottobre 2018",
-        "img": "IMG-GRAFICA.webp"
+        "img": "IMG-GRAFICA.webp",
+        "category": [
+          "percorsi"
+        ]
       },
       {
         "id": 4,
-        "name": "Museo del Lapidarium",
+        "name": "Museo-del-Lapidarium",
         "place": "Corfinio(AQ)",
         "date": "Settembre 2020",
-        "img": "IMG-GRAFICA.webp"
+        "img": "IMG-GRAFICA.webp",
+        "category": [
+          "percorsi"
+        ]
       },
       {
         "id": 5,
-        "name": "Museo Archeologico Romano",
+        "name": "Museo-Archeologico-Romano",
+        "subName": "Santa Maria Assunta",
         "place": "Positano(NA)",
         "date": "Ottobre 2018",
-        "img": "IMG-SISTEMI.webp"
+        "img": "IMG-SISTEMI.webp",
+        "category": [
+          "percorsi"
+        ]
       }
     ]
-  }
 }

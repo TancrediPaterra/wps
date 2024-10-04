@@ -1,11 +1,11 @@
-import '../style.css';
+import '../home.css';
 
 import React, {useEffect, useRef, useState} from "react";
-import DiagonaleCubi from "./DiagonaleCubi";
-import DiagonaleAree from "./DiagonaleAree";
+import DiagonaleCubi from "../Components/DiagonaleCubi";
+import DiagonaleAree from "../Components/DiagonaleAree";
 
-import MenuLaterale from "./MenuLaterale";
-import ScrollerBox from "./ScrollerBox";
+import MenuLaterale from "../Components/MenuLaterale";
+import ScrollerBox from "../Components/ScrollerBox";
 import {ReactComponent as Logo} from "../Assets/Logo.svg";
 import {AnimatePresence, motion} from "framer-motion";
 import BACKGROUND_0 from "../Assets/IMG-BLACK_BACKGROUND.webp";

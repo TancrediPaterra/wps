@@ -1,13 +1,13 @@
 import React from "react";
 import AreaInterventoHome from "./AreaInterventoHome";
-import Titolo from "./Titolo";
+import TitoloHome from "./TitoloHome";
 
 
 function DiagonaleAree({floors, actualFloor, setFloor}){
 
     return <div className={"diagonale-aree-box"}>
 
-        <Titolo show = {() => setFloor(0)} visible={actualFloor===0}/>
+        <TitoloHome show = {() => setFloor(0)} visible={actualFloor===0}/>
         <div className={"diagonale-aree"}>
             {floors.filter(f=>f.floor!==0).map(({areaTitle,imgBackgroundSrc, floor, areaText})=>(
                 <AreaInterventoHome

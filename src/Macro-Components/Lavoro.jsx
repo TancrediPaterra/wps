@@ -1,14 +1,20 @@
-import React, { useEffect, useRef } from "react";
-import {Link, useParams} from "react-router-dom";
+import React, {useEffect, useRef} from "react";
+import {useParams} from "react-router-dom";
+import "../style.css"
+import Header from "../Components/Header";
 
-function GrigliaGallery({ lavori }) {
 
-    const { category } = useParams();
-    if(category)lavori=lavori.filter((lavoro)=>lavoro.category.contain(category));
+function Lavoro({ lavori, toggleMenu, isMenuOpen }) {
+    const { id } = useParams();
 
-    const threshold = 250;
+
+
+    //TODO rendere null-safe
+    const lavoro= lavori.find((lav)=>lav.id===parseInt(id, 10));
+    const threshold = 280;
     const itemsRef = useRef([]);
 
+    //scroll handler
     useEffect(() => {
         function handleScroll() {
             itemsRef.current.forEach((item) => {
@@ -70,26 +76,21 @@ function GrigliaGallery({ lavori }) {
         };
     }, []);
 
-    return (
-        <div className="grid-gallery">
-            {lavori.map(lavoro => (
-                <Link to={`/lavori/dettaglio/${lavoro.name}/id/${lavoro.id}`}
-                      key={lavoro.id}
-                      ref={(el) => {(itemsRef.current[lavoro.id] = el);}}
-                      className="grid-item"
-                      style={{backgroundImage: `url("Assets/${lavoro.img}")`}}>
-
-                        <div className="grid-item-content">
-                            <div>{lavoro.name.replace(/-/g, ' ')}</div>
-                            <div>{lavoro.subName}</div>
-                            <div>{lavoro.place}</div>
-                            <div>{lavoro.date}</div>
-                        </div>
-                    {/*</div>*/}
-                </Link>
-            ))}
+    return <div className={"container"}>
+        <div className="diagonale-cubi-img"></div>
+        <Header name={lavoro?.name.replace(/-/g, ' ')} subName={lavoro?.subName} place={lavoro?.place} date={lavoro?.date} toggleMenu={toggleMenu} isMenuOpen={isMenuOpen}/>
+        <div className={"box-detail-lavoro"}>
+            <div className={"testo-detail-lavoro"}
+                 ref={(el) => { if (el) itemsRef.current[0] = el; }}
+            >{lavoro.text}
+            </div>
+            <img className={"img-detail-lavoro"}  src={`/Assets/${lavoro.img}`} alt={"work"}
+                 ref={(el) => { if (el) itemsRef.current[1] = el; }}
+            />
         </div>
-    );
+    </div>
+
+
 }
 
-export default GrigliaGallery;
+export default Lavoro
