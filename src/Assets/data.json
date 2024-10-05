@@ -13,8 +13,6 @@
       "cubeColor":"#1B1B1B",
       "imgCubeSrc": "/Assets/IMG-CUBO_1.png",
       "areaText": "La WPS, fondata nel 1992 a Roma, è ormai un’eccellenza consolidata nel mondo dell’audiovisivo e della progettazione di spazi espositivi, specializzata in ambienti museali, mostre ed eventi multimediali.\nIl nostro studio mira a creare esperienze immersive uniche, unendo sistemi espositivi e divulgativi d’avanguardia a spettacolari effetti visivi, sonori e illuminotecnici."
-
-
     },
     {
       "floor": 2,
@@ -58,7 +56,8 @@
         "img": "IMG-GRAFICA.webp",
         "text": "L’allestimento del Museo MAR di Positano rispecchia la volontà di valorizzare il sito archeologico nella sua complessità e stratificazione storica. L’allestimento è stato così improntato sulla conservazione del segno stratigrafico e delle modalità di ritrovamento dei reperti. A questo modello espositivo, basato sulla ricostruzioni degli apparati e sull’utilizzo di materiali di scavo, sono stati aggiunti sistemi multimediali di navigazione per investigare gli strepitosi affreschi romani e raccontare il lungo e complesso loro disvelamento. Attraverso dei piccoli display sono state invece descritte tutte le fasi di scavo e restauro dei reperti.",
         "category": [
-          "percorsi"
+          "PERCORSI-E-ALLESTIMENTI",
+          "AMBIENTI-AUDIOVISIVI"
         ]
       },
       {
@@ -70,7 +69,7 @@
         "img": "IMG-SISTEMI.webp",
         "text": "L’allestimento del Museo Archeologico Romano di Positano è pensato per valorizzare l’antica villa romana e i reperti che raccontano la storia di questo straordinario sito. Il progetto espositivo mira a rispettare la stratificazione storica del luogo, con un’attenzione particolare alla conservazione dei segni archeologici e delle tecniche di scavo utilizzate. All’interno del percorso, sistemi multimediali interattivi e installazioni 3D permettono ai visitatori di esplorare virtualmente gli ambienti della villa, riportando in vita gli antichi affreschi e mosaici, e mostrando il processo di scoperta e restauro. Piccoli schermi informativi forniscono dettagli approfonditi su ogni fase dello scavo, offrendo un’esperienza immersiva che intreccia passato e presente, in un racconto affascinante della storia romana di Positano.",
         "category": [
-          "percorsi"
+          "AMBIENTI-AUDIOVISIVI"
         ]
       },
       {
@@ -80,7 +79,7 @@
         "date": "Settembre 2020",
         "img": "IMG-SISTEMI.webp",
         "category": [
-          "percorsi"
+          ""
         ]
       },
       {
@@ -91,7 +90,7 @@
         "date": "Ottobre 2018",
         "img": "IMG-GRAFICA.webp",
         "category": [
-          "percorsi"
+          ""
         ]
       },
       {
@@ -101,7 +100,7 @@
         "date": "Settembre 2020",
         "img": "IMG-GRAFICA.webp",
         "category": [
-          "percorsi"
+          ""
         ]
       },
       {
@@ -112,7 +111,7 @@
         "date": "Ottobre 2018",
         "img": "IMG-SISTEMI.webp",
         "category": [
-          "percorsi"
+          ""
         ]
       }
     ]

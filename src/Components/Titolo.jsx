@@ -1,8 +1,10 @@
 import React from "react";
+import {ReactComponent as BulletCube} from "../Assets/SVG/BulletCube.svg";
+
 function Titolo({name, subName, place, date}){
     console.log(name);
     return <div className={`box-titolo`}>
-        <img src={"/Assets/BulletCube.png"} alt={"bullet-cube"} style={{height:"32px", width:"32px"}}/>
+        <BulletCube style={{height:"32px", width:"32px"}}/>
         <div className={`titolo`}>
             <div>{name?.toUpperCase()}</div>
             <div>{subName?.toUpperCase()}</div>

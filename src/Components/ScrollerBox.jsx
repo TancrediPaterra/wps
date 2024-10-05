@@ -1,6 +1,6 @@
 import React from "react";
 import Arrow from "./Arrow";
-import {ReactComponent as MenuIcon} from "../Assets/Menu.svg";
+import {ReactComponent as MenuIcon} from "../Assets/SVG/Menu.svg";
 
 function ScrollerBox({floor, setFloor, toggleMenu}) {
     return <div className={"scroller-box"}>

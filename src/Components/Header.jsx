@@ -1,8 +1,8 @@
 import Titolo from "./Titolo";
 import MenuLaterale from "./MenuLaterale";
 import React from "react";
-import {ReactComponent as MenuIcon} from "../Assets/Menu.svg";
-import {ReactComponent as Logo} from "../Assets/Logo.svg";
+import {ReactComponent as MenuIcon} from "../Assets/SVG/Menu.svg";
+import {ReactComponent as Logo} from "../Assets/SVG/Logo.svg";
 
 function Header({name, date, subName, place, isMenuOpen, toggleMenu}) {
     return <div className="header">

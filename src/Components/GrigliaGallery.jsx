@@ -77,7 +77,7 @@ function GrigliaGallery({ lavori }) {
                       key={lavoro.id}
                       ref={(el) => {(itemsRef.current[lavoro.id] = el);}}
                       className="grid-item"
-                      style={{backgroundImage: `url("Assets/${lavoro.img}")`}}>
+                      style={{backgroundImage: `url("/Assets/${lavoro.img}")`}}>
 
                         <div className="grid-item-content">
                             <div>{lavoro.name.replace(/-/g, ' ')}</div>

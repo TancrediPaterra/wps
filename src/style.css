@@ -55,7 +55,40 @@
     display: flex;
     flex-direction: column;
     gap: 0.5vh;
-    margin-top: 6px;
+    margin-top: 5px;
+}
+
+
+.box-nav-gallery {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    font-size: 18px;
+    gap: 2vw;
+    flex-shrink: 0;
+    margin-top: 196px;
+    width: 77%;
+}
+
+.link-gallery{
+    margin-top: 5px;
+    text-decoration: none;
+    color: rgb(198,199,200);
+    opacity: 0.6;
+}
+
+.link-gallery:hover {
+    text-decoration: underline;
+    color: white;
+    opacity:1;
+}
+
+.active{
+    text-decoration: underline;
+    color: white;
+    opacity:1;
+
 }
 
 .logo {

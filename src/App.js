@@ -15,7 +15,7 @@ function App() {
           <Routes>
               <Route path="/" element={<Home floors={data.floors} isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}/>} />
               <Route path="/lavori/" element={<Gallery lavori={data.lavori} isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}/>} />
-              <Route path="/lavori/:categoria" element={<Gallery lavori={data.lavori} isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}/>} />*
+              <Route path="/lavori/:categoria/" element={<Gallery lavori={data.lavori} isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}/>} />*
               <Route path="/lavori/dettaglio/:name/id/:id" element={<Lavoro lavori={data.lavori} isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}/>}/>
               {/*<Route path="/contact" element={<Contatti />} />*!/*/}
           </Routes>

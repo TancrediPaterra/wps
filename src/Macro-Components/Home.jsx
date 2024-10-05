@@ -6,7 +6,7 @@ import DiagonaleAree from "../Components/DiagonaleAree";
 
 import MenuLaterale from "../Components/MenuLaterale";
 import ScrollerBox from "../Components/ScrollerBox";
-import {ReactComponent as Logo} from "../Assets/Logo.svg";
+import {ReactComponent as Logo} from "../Assets/SVG/Logo.svg";
 import {AnimatePresence, motion} from "framer-motion";
 import BACKGROUND_0 from "../Assets/IMG-BLACK_BACKGROUND.webp";
 import BACKGROUND_1 from "../Assets/IMG-PRESENTAZIONE.webp";

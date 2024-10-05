@@ -1,12 +1,17 @@
-[] cambiare immagine icona area intervento (canva)
 [] sistemare animazione homepage tra background
 [] sistemare calibrazione scroll (libreria)
+[] slider
 
 
 [X] sistemare rendering Lavoro in base a ID
 [X] popolamento titolo gallery
 [x] grafica titolo
-[] dividere diagonale dei cubi da sfondo, sia in gallery che nei lavori; rendere statica la posizione di logo e titolo
+[X] dividere diagonale dei cubi da sfondo, sia in gallery che nei lavori; rendere statica la posizione di logo e titolo
 [X] grafica detail lavoro
 [X] clip su scroll
-[] slider
+
+[X] link a vai a gallery in base a category
+[X] link da logo gallery e lavori a homepage
+[X] navigator gallery
+    sottolineata quella attuale
+    le altre in trasparenza ma con hover
