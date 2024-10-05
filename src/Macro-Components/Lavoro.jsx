@@ -7,8 +7,6 @@ import Header from "../Components/Header";
 function Lavoro({ lavori, toggleMenu, isMenuOpen }) {
     const { id } = useParams();
 
-
-
     //TODO rendere null-safe
     const lavoro= lavori.find((lav)=>lav.id===parseInt(id, 10));
     const threshold = 280;
