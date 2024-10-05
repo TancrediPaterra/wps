@@ -11,9 +11,9 @@ function Gallery({ lavori, toggleMenu, isMenuOpen }) {
     //mockup
     const backgroundImages = {
         "PERCORSI-E-ALLESTIMENTI":"BACKGROUND_GALLERY_PERCORSI.webp",
-        "AMBIENTI-AUDIOVISIVI": "BACKGROUND_GALLERY_PERCORSI.webp",
-        "SISTEMI-INTERATTIVI":"BACKGROUND_GALLERY_PERCORSI.webp",
-        "GRAFICA-E-COMUNICAZIONE":"BACKGROUND_GALLERY_PERCORSI.webp"
+        "AMBIENTI-AUDIOVISIVI": "BACKGROUND_GALLERY_AMBIENTI.webp",
+        "SISTEMI-INTERATTIVI":"BACKGROUND_GALLERY_SISTEMI.webp",
+        "GRAFICA-E-COMUNICAZIONE":"BACKGROUND_GALLERY_GRAFICA.webp"
         }
     const imgBackgroundSrc = categoria? backgroundImages[categoria]:"";
     if(categoria){
