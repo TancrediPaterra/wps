@@ -1,30 +1,36 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "../style.css"
 import GrigliaGallery from "../Components/GrigliaGallery";
 import {useParams} from "react-router-dom";
 import HeaderGallery from "../Components/HeaderGallery";
 
+import PERCORSI_E_ALLESTIMENTI from "../Assets/BACKGROUND_GALLERY_PERCORSI.webp"
+import AMBIENTI_AUDIOVISIVI from "../Assets/BACKGROUND_GALLERY_AMBIENTI.webp"
+import SISTEMI_INTERATTIVI from "../Assets/BACKGROUND_GALLERY_SISTEMI.webp"
+import GRAFICA_E_COMUNICAZIONE from "../Assets/BACKGROUND_GALLERY_GRAFICA.webp"
 
 function Gallery({ lavori, toggleMenu, isMenuOpen }) {
     const { categoria } = useParams();
 
-    //mockup
-    const backgroundImages = {
-        "PERCORSI-E-ALLESTIMENTI":"BACKGROUND_GALLERY_PERCORSI.webp",
-        "AMBIENTI-AUDIOVISIVI": "BACKGROUND_GALLERY_AMBIENTI.webp",
-        "SISTEMI-INTERATTIVI":"BACKGROUND_GALLERY_SISTEMI.webp",
-        "GRAFICA-E-COMUNICAZIONE":"BACKGROUND_GALLERY_GRAFICA.webp"
-        }
-    const imgBackgroundSrc = categoria? backgroundImages[categoria]:"";
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    })
+
+    const categoryToImageMap = {
+        "PERCORSI-E-ALLESTIMENTI": PERCORSI_E_ALLESTIMENTI,
+        "AMBIENTI-AUDIOVISIVI": AMBIENTI_AUDIOVISIVI,
+        "SISTEMI-INTERATTIVI": SISTEMI_INTERATTIVI,
+        "GRAFICA-E-COMUNICAZIONE": GRAFICA_E_COMUNICAZIONE,
+    };
+
+    const imgBackgroundSrc = categoria? categoryToImageMap[categoria]:" ";
     if(categoria){
         lavori=lavori.filter((el)=>el.category.includes(categoria));
     }
 
     return (
-
         <div className="container">
-            {/* Sfondo fisso */}
-            <div className={"background-gallery"} style={{backgroundImage:`url(/Assets/${imgBackgroundSrc})`}}/>
+            <div className={"background-gallery"} style={{backgroundImage:`url(${imgBackgroundSrc})`}}/>
             <div className={"diagonale-cubi-img"}/>
             <HeaderGallery  isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}/>
             <GrigliaGallery lavori={lavori} />

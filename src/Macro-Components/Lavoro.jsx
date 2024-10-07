@@ -12,6 +12,9 @@ function Lavoro({ lavori, toggleMenu, isMenuOpen }) {
     const threshold = 280;
     const itemsRef = useRef([]);
 
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    })
     //scroll handler
     useEffect(() => {
         function handleScroll() {

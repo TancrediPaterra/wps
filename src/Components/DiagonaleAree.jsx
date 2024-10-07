@@ -15,7 +15,7 @@ function DiagonaleAree({floors, actualFloor, setFloor}){
                     name={areaTitle}
                     imgSrc = {imgBackgroundSrc}
                     setFloor = {setFloor}
-                    isBoxVisible={actualFloor===floor}
+                    floor={actualFloor}
                     text={areaText}
                 />))}
         </div>

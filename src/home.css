@@ -112,23 +112,22 @@ body {
     justify-content: flex-start;
     align-items: center;
     font-size:18px;
-    /*font-size: calc(0.73vh + 1.06vw);*/
     gap: 10px;
     flex-shrink: 0;
     cursor: pointer;
 }
+
+/*.button-titolo-area-intervento:hover{*/
+/*    color: white;*/
+/*    opacity: 1;*/
+/*}*/
 
 .opacity-titolo-area{
     opacity: 0.3;
 }
 
 
-.button-titolo-area-intervento>img{
-    height: 3.2vh;
-    width: 3.2vh;
-}
-
-.area-intervento:hover{
+.area-intervento:hover, .area-intervento:hover .button-titolo-area-intervento{
     color: white;
     opacity: 1;
 }
