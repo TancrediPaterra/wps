@@ -1,24 +1,23 @@
 import React from "react";
 
-function Cubo({color,id, imgSrc, actualFloor}){
-    function handleCube(){
-        // console.log(actualFloor);
-        if(actualFloor === 0) {
-            return <div className={"cube"} style={{overflow: "hidden"}}>
-                <img src={imgSrc}
-                     style={{width: "150%", height: "150%", transform: "rotate(-45deg)", transformOrigin: "20% 65%"}}
-                     alt={"work cube"}/>
-            </div>
+function Cubo({color,id, imgSrc, actualFloor, backImg}){
+
+  function handleCubeStyle() {
+      if (actualFloor === id) {
+        return {
+            backgroundColor: "transparent",
+            backdropFilter: "brightness(2.4)",
+            WebkitBackdropFilter: "brightness(2.4)"
         }
-        else if(actualFloor === id){
-            return <div className={"cube"} style={{backdropFilter:"brightness(2) saturate(2)", WebkitBackdropFilter: "brightness(2) saturate(2)"}} id={"cubo-" + id}>
-            </div>
-        }
-        else{
-            return <div className={"cube"} style={{backgroundColor: color, overflow: "hidden"}} id={"cubo-" + id}></div>
-        }
-    }
-    return handleCube();
+      } else if (actualFloor !== 0) {
+          return {"backgroundColor":color}
+      }
+  }
+    return (
+        <div className={"cube"} id={"cubo-" + id}  style={handleCubeStyle()}>
+            {actualFloor === 0 && <img src={imgSrc} className={"cube-img"} alt={"work cube"}/>}
+        </div>
+    )
 }
 
 export default Cubo;

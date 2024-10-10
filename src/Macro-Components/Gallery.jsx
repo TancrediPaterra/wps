@@ -4,10 +4,10 @@ import GrigliaGallery from "../Components/GrigliaGallery";
 import {useParams} from "react-router-dom";
 import HeaderGallery from "../Components/HeaderGallery";
 
-import PERCORSI_E_ALLESTIMENTI from "../Assets/BACKGROUND_GALLERY_PERCORSI.webp"
-import AMBIENTI_AUDIOVISIVI from "../Assets/BACKGROUND_GALLERY_AMBIENTI.webp"
-import SISTEMI_INTERATTIVI from "../Assets/BACKGROUND_GALLERY_SISTEMI.webp"
-import GRAFICA_E_COMUNICAZIONE from "../Assets/BACKGROUND_GALLERY_GRAFICA.webp"
+import PERCORSI_E_ALLESTIMENTI from "../Assets/BACKGROUNDS/BACKGROUND_GALLERY_PERCORSI.webp"
+import AMBIENTI_AUDIOVISIVI from "../Assets/BACKGROUNDS/BACKGROUND_GALLERY_AMBIENTI.webp"
+import SISTEMI_INTERATTIVI from "../Assets/BACKGROUNDS/BACKGROUND_GALLERY_SISTEMI.webp"
+import GRAFICA_E_COMUNICAZIONE from "../Assets/BACKGROUNDS/BACKGROUND_GALLERY_GRAFICA.webp"
 
 function Gallery({ lavori, toggleMenu, isMenuOpen }) {
     const { categoria } = useParams();

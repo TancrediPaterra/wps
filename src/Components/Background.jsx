@@ -1,59 +1,65 @@
-import React, {useEffect, useRef, useState} from "react";
-import BACKGROUND_0 from "../Assets/IMG-BLACK_BACKGROUND.webp";
-import BACKGROUND_1 from "../Assets/IMG-PRESENTAZIONE.webp";
-import BACKGROUND_2 from "../Assets/IMG-PERCORSI.webp";
-import BACKGROUND_3 from "../Assets/IMG-AMBIENTI.webp";
-import BACKGROUND_4 from "../Assets/IMG-SISTEMI.webp";
-import BACKGROUND_5 from "../Assets/IMG-GRAFICA.webp";
-import { motion, AnimatePresence } from "framer-motion";
+import React, {useEffect, useRef} from "react";
 
-export default function Background({ floor, precedentFloor }) {
-    const backgrounds = {
-        0: BACKGROUND_0,
-        1: BACKGROUND_1,
-        2: BACKGROUND_2,
-        3: BACKGROUND_3,
-        4: BACKGROUND_4,
-        5: BACKGROUND_5
+import BACKGROUND_0 from "../Assets/BACKGROUNDS/BACKGROUND_HOME_BLACK_CLEAR.webp";
+import BACKGROUND_1 from "../Assets/BACKGROUNDS/BACKGROUND_HOME_PRESENTAZIONE_CLEAR.webp";
+import BACKGROUND_2 from "../Assets/BACKGROUNDS/BACKGROUND_HOME_PERCORSI_CLEAR.webp";
+import BACKGROUND_3 from "../Assets/BACKGROUNDS/BACKGROUND_HOME_AMBIENTI_CLEAR.webp";
+import BACKGROUND_4 from "../Assets/BACKGROUNDS/BACKGROUND_HOME_SISTEMI_CLEAR.webp";
+import BACKGROUND_5 from "../Assets/BACKGROUNDS/BACKGROUND_HOME_GRAFICA_CLEAR.webp";
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-cube';
+import '../slider.css'
+import {EffectCube} from "swiper/modules";
+
+// Inizializza il modulo
+
+export default function Background({actualFloor, direction }) {
+    const backgrounds:string[] =[BACKGROUND_0,BACKGROUND_1, BACKGROUND_2, BACKGROUND_3, BACKGROUND_4, BACKGROUND_5];
+    const backgroundsImages=useRef([]);
+
+    function test(){
+        backgroundsImages.current = backgrounds.map((src) => {
+            const img = new Image();
+            img.src = src;
+            img.className=".swiper-slide-img"
+            return img;
+        });
+        return backgroundsImages.current.map((img, index) => (
+            <SwiperSlide key={index} className={"swiper-slide"}>
+                <img src={img.src} alt={`Background ${index}`} className="swiper-slide-img"/>
+            </SwiperSlide>))
+    }
+
+    //Montaggio Ref Swiper
+    const swiperRef = useRef(null);
+    const onSwiper = (swiper) => {
+        swiperRef.current = swiper; // Salva il riferimento allo swiper
     };
 
-    const previousFloorRef = useRef(floor); // Ref per mantenere il valore precedente di floor
-    const [currentImage, setCurrentImage] = useState(backgrounds[floor]);
-
-    // Quando cambia il floor, aggiornare l'immagine immediatamente e avviare l'animazione
-    useEffect(() => {
-        console.log("Animazione Back:" + previousFloorRef.current + "  " + floor);
-        if (floor !== previousFloorRef) {
-            setCurrentImage(backgrounds[floor]);
+    useEffect(()=>{
+        if(swiperRef.current){
+            swiperRef.current.slideTo(actualFloor, 1500);
         }
-    }, [floor]);
+    }, [actualFloor]);
 
-    return (
-        <AnimatePresence mode="sync">
-            <motion.div
-                key={floor} // Usa animatingFloor per evitare problemi di re-render
-                initial={{ opacity: 0.0, y: previousFloorRef.current < floor ? "100%" : "-100%" }}
-                animate={{ opacity: 1, y: "0%" }}
-                exit={{ opacity: 0, y: previousFloorRef.current < floor ? "-100%" : "100%" }}
-                transition={{ duration: 1 }}
-                onExitComplete={() => {
-                    previousFloorRef.current = floor;
-                    console.log("Animazione Back: 2.0" + previousFloorRef.current + "  " + floor);
+    return <Swiper
+        onSwiper={onSwiper}
+        modules={[EffectCube]}
+        initialSlide={0}
+        cubeEffect={{shadow: false}}
+        effect={"cube"}
+        direction={'vertical'}
+        className="swiper"
+        enabled={"false"}
 
-                    // Aggiorna il previousFloorRef solo dopo che l'animazione è completata
-                }}
-                style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100vw",
-                    height: "100vh",
-                    backgroundImage: `url(${currentImage})`,
-                    backgroundSize: "cover",
-                    zIndex: -1
-                }}
-            >
-            </motion.div>
-        </AnimatePresence>
-    );
+    >
+        {test()}
+        {/*{backgroundsImages && backgroundsImages.current.map((img, index) => (*/}
+        {/*    <SwiperSlide key={index} className={"swiper-slide"}>*/}
+        {/*        <img src={img.src} alt={`Background ${index}`} className="swiper-slide-img"/>*/}
+        {/*    </SwiperSlide>))*/}
+        {/*}*/}
+    </Swiper>
 }

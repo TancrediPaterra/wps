@@ -4,13 +4,12 @@ import TitoloHome from "./TitoloHome";
 
 
 function DiagonaleAree({floors, actualFloor, setFloor}){
-
     return <div className={"diagonale-aree-box"}>
-
         <TitoloHome show = {() => setFloor(0)} visible={actualFloor===0}/>
         <div className={"diagonale-aree"}>
             {floors.filter(f=>f.floor!==0).map(({areaTitle,imgBackgroundSrc, floor, areaText})=>(
                 <AreaInterventoHome
+                    key={floor}
                     id={floor}
                     name={areaTitle}
                     imgSrc = {imgBackgroundSrc}
