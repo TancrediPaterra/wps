@@ -174,12 +174,10 @@ body {
     margin-left: 8vh;
     flex: none;
     cursor: pointer;
-}
-
-.logo-grande-svg {
     width: auto;
     height: 25vh;
 }
+
 
 .scroller-box{
     position: absolute;
