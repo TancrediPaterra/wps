@@ -28,6 +28,8 @@
     opacity: 0.4;
     z-index: -2;
     pointer-events: none;
+    transition: transform 1s ease-in-out;
+
     /*background-position: center;*/
 }
 .swiper-slide-img{
