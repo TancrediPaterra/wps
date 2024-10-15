@@ -60,7 +60,7 @@ function Lavoro({ lavori, toggleMenu, isMenuOpen }) {
     const videos = [
         {
             videoUrl: 'https://www.youtube.com/watch?v=LXb3EKWsInQ',
-            thumbnailUrl: '/Assets/thumbnail.png',
+            thumbnailUrl: '/Assets/Salerno_01.JPG',
             width:"1200px",
             height:"800px"
         }
