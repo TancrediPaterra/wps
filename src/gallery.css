@@ -1,4 +1,3 @@
-/* Sfondo fisso */
 .background-gallery {
     position: fixed;
     top: 0;
@@ -11,26 +10,34 @@
     transition: background 0.5s ease-in-out;
 }
 
-.diagonale-cubi-img{
+/*comune anche a lavoro*/
+.small-cube-diagonal{
     position: fixed;
     top: 0;
     left: 0;
-    background-image: url("./Assets/IMG-DiagonaleCubi.webp");
     background-repeat: no-repeat;
     z-index: -2; /* Sotto tutto */
-    height: 470px;
-    width: 100vw;
+    height: 420px;
+    /*width: 100vw;*/
 }
 
-.container {
+.logo {
+    margin-left: 82px;
+    margin-top: 63px;
+    height: 130px;
+    width: 147px;
+}
+
+.container-gallery {
     position: relative;
     height: 100vh;
+    overflow: hidden;
 }
 
-.header {
+.header-gallery{
     position: fixed;
     display: flex;
-    gap: 39px;
+    gap: 65px;
     top: 0;
     left: 0;
     width: 100vw;
@@ -39,64 +46,26 @@
     background-color: transparent;
 }
 
-.box-titolo-torna-gallery{
-    display: flex;
-    justify-content: space-between;
-    width: 78%;
-}
-
-.box-titolo {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    font-size: 18px;
-    gap: 1vw;
-    flex-shrink: 0;
-    margin-top: 196px;
-    width: auto;
-}
-
-.titolo{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5vh;
-    margin-top: 5px;
-}
-
-.torna-gallery{
-    margin-top: 202px;
-    color: rgb(198,199,200);
-    text-decoration: none;
-    opacity: 0.7;
-}
-
-.torna-gallery:hover{
-    color: white;
-    opacity: 1;
-    text-decoration: underline;
-}
-
-
 .box-nav-gallery {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
     align-items: flex-start;
     font-size: 18px;
-    gap: 2vw;
+    gap: 1.8vw;
     flex-shrink: 0;
-    margin-top: 196px;
+    margin-top: 130px;
     width: 77%;
 }
 
-.link-gallery{
+.link-nav-gallery{
     margin-top: 5px;
     text-decoration: none;
     color: rgb(198,199,200);
     opacity: 0.6;
 }
 
-.link-gallery:hover {
+.link-nav-gallery:hover {
     text-decoration: underline;
     color: white;
     opacity:1;
@@ -106,31 +75,21 @@
     text-decoration: underline;
     color: white;
     opacity:1;
-
 }
 
-.logo {
-    margin-left: 102px;
-    margin-top: 100px;
-    height: 140px;
-    width: 140px;
-}
-
-.grid-gallery {
+.gallery {
     position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 colonne */
     gap: 50px;
-    margin: 300px 4vw 0 278px;
-    /*padding-bottom: 10vh;*/
+    margin: 250px 4vw 0 290px;
     padding:0 0 10vh 0; /* Spazio per lasciare visibile l'header */
     z-index: 0; /* Sotto l'header */
-    /*transition: transform 0.3s ease;*/
     width: calc(70vw + 50px);
 }
 
-.grid-item {
-    border: 21px solid rgba(255, 255, 255, 0.5); /* Bordo traslucido */
+.gallery-item {
+    border: 21px solid rgba(255, 255, 255, 0.3); /* Bordo traslucido */
     border-radius: 0;
     text-align: center;
     width: 35vw;
@@ -148,13 +107,19 @@
     text-decoration:none;
 }
 
-.grid-item:hover div{
-    color:white;
-    font-size: 20px;
-    transition: font-size 0.5s ease-in-out;
+.gallery-item:hover{
+    border: 21px solid rgba(255, 255, 255, 0.8);
+    transition: border-color 0.3s ease-in-out;
 }
 
-.grid-item-content {
+.gallery-item:hover div{
+    color:rgba(255, 255, 255, 0.9);
+    font-size: 22px;
+    transition: font-size 0.6s ease-in-out;
+    text-decoration:underline;
+}
+
+.gallery-item-content {
     display: flex;
     flex-direction: column;
     gap: 0.5vh;
@@ -166,21 +131,5 @@
     cursor: pointer;
     text-decoration:none;
 }
-
-.box-detail-lavoro{
-    margin: 300px 4vw 0 278px;
-}
-
-.testo-detail-lavoro{
-    text-align: left;
-}
-
-.img-detail-lavoro{
-    background-repeat: no-repeat;
-    width: 100%;
-    height: auto;
-    padding-top: 10vh;
-}
-
 
 

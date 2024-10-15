@@ -2,20 +2,19 @@ import React from "react";
 import {ReactComponent as BulletCube} from "../Assets/SVG/BulletCube.svg";
 import {Link} from "react-router-dom";
 
-function Titolo({name, subName, place, date}){
-    console.log(name);
-    return <div className={"box-titolo-torna-gallery"}>
-        <div className={`box-titolo`}>
+function TitoloLavoro({name, subName, place, date}){
+    return <div className={"container-titolo-lavoro"}>
+        <div className={`container-text-titolo-lavoro`}>
             <BulletCube style={{height: "32px", width: "32px"}}/>
-            <div className={`titolo`}>
+            <div className={`text-titolo-lavoro`}>
                 <div>{name?.toUpperCase()}</div>
                 <div>{subName?.toUpperCase()}</div>
                 <div><b>{place?.toUpperCase()} {place && "•"} {date?.toUpperCase()}</b></div>
             </div>
         </div>
-        <Link to={"/lavori"} className={"torna-gallery"}>Torna alla gallery</Link>
+        <Link to={"/lavori"} className={"button-torna-gallery"}>Torna alla gallery</Link>
     </div>
 
 }
 
-export default Titolo;
+export default TitoloLavoro;

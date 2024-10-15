@@ -1,8 +1,9 @@
 import React, {useEffect} from "react";
-import "../style.css"
+import "../gallery.css"
 import GrigliaGallery from "../Components/GrigliaGallery";
 import {useParams} from "react-router-dom";
 import HeaderGallery from "../Components/HeaderGallery";
+import {ReactComponent as CubeDiagonal} from "../Assets/SVG/DiagonaleCubi.svg"
 
 import PERCORSI_E_ALLESTIMENTI from "../Assets/BACKGROUNDS/BACKGROUND_GALLERY_PERCORSI.webp"
 import AMBIENTI_AUDIOVISIVI from "../Assets/BACKGROUNDS/BACKGROUND_GALLERY_AMBIENTI.webp"
@@ -29,9 +30,9 @@ function Gallery({ lavori, toggleMenu, isMenuOpen }) {
     }
 
     return (
-        <div className="container">
+        <div className="container-gallery">
             <div className={"background-gallery"} style={{backgroundImage:`url(${imgBackgroundSrc})`}}/>
-            <div className={"diagonale-cubi-img"}/>
+            <CubeDiagonal className={"small-cube-diagonal"}/>
             <HeaderGallery  isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}/>
             <GrigliaGallery lavori={lavori} />
         </div>

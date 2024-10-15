@@ -1,0 +1,81 @@
+.video-frame {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 190px;
+    height: 120px;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-origin: border-box;
+    border-radius: 0;
+    background-size:cover;
+}
+
+.play-icon {
+    cursor: pointer; /* Cambia il cursore per indicare cliccabile */
+    height: 48px;
+    width: 48px;
+    z-index: 2;
+}
+
+.play-icon svg {
+    fill: white; /* Colore dell'icona */
+}
+
+.actual-video {
+    display: flex; /* Usare flexbox per disporre i pulsanti e il video */
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    border-radius: 10px;
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);*/
+    z-index: 1001;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.nav-video-button{
+    cursor: pointer;
+}
+
+.nav-video-button:hover{
+    background-color: transparent;
+}
+
+.prev-button:hover,
+.next-button:hover {
+    background-color: rgba(255, 0, 0, 0.8);
+    color: white;
+}

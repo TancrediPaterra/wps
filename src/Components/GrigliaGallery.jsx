@@ -71,15 +71,15 @@ function GrigliaGallery({ lavori }) {
     }, []);
 
     return (
-        <div className="grid-gallery">
+        <div className="gallery">
             {lavori.map(lavoro => (
                 <Link to={`/lavori/dettaglio/${lavoro.name}/id/${lavoro.id}`}
                       key={lavoro.id}
                       ref={(el) => {(itemsRef.current[lavoro.id] = el);}}
-                      className="grid-item"
+                      className="gallery-item"
                       style={{backgroundImage: `url("/Assets/${lavoro.img}")`}}>
 
-                        <div className="grid-item-content">
+                        <div className="gallery-item-content">
                             <div>{lavoro.name.replace(/-/g, ' ')}</div>
                             <div>{lavoro.subName}</div>
                             <div>{lavoro.place}</div>

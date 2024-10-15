@@ -1,25 +1,44 @@
-[] sistemare animazione homepage tra background
-[] sistemare calibrazione scroll (libreria)
-[] slider
-
-
+[X] sistemare animazione homepage tra background
+[X] sistemare calibrazione scroll (libreria)
 [X] sistemare rendering Lavoro in base a ID
 [X] popolamento titolo gallery
 [x] grafica titolo
 [X] dividere diagonale dei cubi da sfondo, sia in gallery che nei lavori; rendere statica la posizione di logo e titolo
 [X] grafica detail lavoro
 [X] clip su scroll
-
 [X] link a vai a gallery in base a category
 [X] link da logo gallery e lavori a homepage
 [X] navigator gallery
     sottolineata quella attuale
     le altre in trasparenza ma con hover
-
 [X] torna alla gallery, sotto logo menu
-
-
 [X] titoli aree intervento non opache
-[] il brightness non funziona
+[X] il brightness non funziona
 [X] sul cambio pagina posizione Y a 0
-[] azare titoletto su Lavoro, non si vede immagine
+[X] alzare titoletto su Lavoro, non si vede immagine
+[X] ridurre dimensione immagini
+[X] a capo nei titoletti
+[X] gestione cubo immagini - lavoro
+[X] paginazione slider lavoro
+[X] stile pagina lavoro
+    [X]inserire box x frame video
+[X] analisi e gestione video lavoro
+
+[X] pulsanti navigation tra i video
+[X] dimensione dinamica dei video
+[X] cornice al frame video
+[X] aumentare trasparenza bordi galleria
+
+[] pulsanti  navigation cubo lavori
+[] fix scroll gallery
+[] componentizzare logo con già link dentro
+[] componentizzare menu con già gestione dello stato interna
+[] modificare font - RALEWAY LIGHT 300
+[] favicon
+
+[] refactor e semplificazione stile homepage
+
+[] Headless CMS con gestione dei dati
+    [] Come salvare le imamgini?
+[] installare cloudFire dal dns - gestione contenuti statici
+[] pre caricamento immagini

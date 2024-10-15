@@ -1,7 +1,7 @@
 import React from "react";
-import {ReactComponent as ArrowUp} from "../Assets/SVG/IMG_ARROW_UP.svg";
-import {ReactComponent as ArrowDown} from "../Assets/SVG/IMG_ARROW_DOWN.svg";
-import {ReactComponent as ArrowSeparator} from "../Assets/SVG/IMG_ARROW_SEPARATOR.svg";
+import {ReactComponent as ArrowUp} from "../Assets/SVG/ArrowUp.svg";
+import {ReactComponent as ArrowDown} from "../Assets/SVG/ArrowDown.svg";
+import {ReactComponent as ArrowSeparator} from "../Assets/SVG/ArrowSeparator.svg";
 
 function Arrow({floor, setFloor}){
     return <div className={"arrow-scroll"}>

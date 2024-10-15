@@ -1,0 +1,119 @@
+
+.container-lavoro{
+    position: relative;
+    /*display: flex;*/
+    /*grid-template-rows: 25vh 75vh; !* Prima riga occupa 1/4 (25vh), seconda riga 3/4 (75vh) *!*/
+    /*grid-template-columns: 25% 75%; !* La seconda riga è divisa in due colonne: 1/4 e 3/4 della larghezza *!*/
+    height: 100vh; /* Altezza totale della viewport */
+    width: 100vw;
+    overflow: hidden;
+}
+
+.header-lavoro{
+    /*grid-column: 1 / span 2;*/
+    position: fixed;
+    display: flex;
+    gap: 65px;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 260px;
+    z-index: 2;
+    background-color: transparent;
+}
+
+.container-titolo-lavoro{
+    display: flex;
+    justify-content: space-between;
+    width: 78%;
+    margin-top: 125px;
+}
+
+.container-text-titolo-lavoro {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 18px;
+    gap: 1vw;
+    flex-shrink: 0;
+    width: auto;
+}
+
+.text-titolo-lavoro{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vh;
+    margin-top: 5px;
+}
+
+.button-torna-gallery{
+    color: rgb(198,199,200);
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+.button-torna-gallery:hover{
+    color: white;
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.sidebar-lavoro{
+    position: absolute;
+    top: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    overflow: hidden;
+    gap: 30px;
+    width: 330px;
+    box-sizing: border-box;
+    padding: 0 70px 0 87px;
+}
+
+.text-lavoro{
+    text-align: left;
+}
+
+.content-lavoro{
+    position: absolute;
+    top: 260px;
+    left: 330px;
+    overflow: hidden;
+    width: 76vw;
+    margin: 0 20px 110px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.swiper-lavoro{
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    height: 60vh;
+    width: 70vw;
+    z-index: -2 !important;
+    pointer-events: none !important;
+}
+
+.nav-swiper-lavoro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    color: rgb(198,199,200);
+    width: 6vw;
+}
+
+.nav-button-swiper-lavoro{
+    cursor: pointer;
+}
+
+.nav-button-swiper-lavoro:hover{
+    color: white;
+}
+
+

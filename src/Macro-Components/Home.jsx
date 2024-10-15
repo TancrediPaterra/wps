@@ -74,14 +74,13 @@ function Home({floors, isMenuOpen, toggleMenu}) {
 
 
     return <div className={"home"}>
-        <ReactScrollWheelHandler upHandler={upHandler} downHandler={downHandler}>
+        <ReactScrollWheelHandler upHandler={upHandler} downHandler={downHandler} timeout={1500}>
             <Background actualFloor={state.floor} direction={state.direction}/>
             <Logo className={"logo-grande"} onClick={()=>changeState(0)}/>
             <DiagonaleCubi floors={floors} actualFloor={state.floor} setFloor={changeState}/>
             <DiagonaleAree floors={floors} actualFloor={state.floor} setFloor={changeState}/>
             {isMenuOpen ? <MenuLaterale toggleMenu={toggleMenu}/> : <ScrollerBox floor={state.floor} setFloor={changeState} toggleMenu={toggleMenu}/>}
         </ReactScrollWheelHandler>
-
     </div>
 }
 

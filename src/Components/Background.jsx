@@ -23,21 +23,34 @@ export default function Background({actualFloor, direction }) {
         backgroundsImages.current = backgrounds.map((src) => {
             const img = new Image();
             img.src = src;
-            img.className = ".swiper-slide-img"
             return img;
         });
+
         return useMemo(() => {
             return backgroundsImages.current.map((img, index) => (
-                <SwiperSlide key={index} className={"swiper-slide"}>
-                    <img src={img.src} alt={`Background ${index}`} className="swiper-slide-img"/>
-                </SwiperSlide>))
-        })
+                <SwiperSlide key={index} className="swiper-slide">
+                    <img src={img.src} alt={`Background ${index}`} className={"swiper-slide-img-home"} style={{opacity:"0.4"}}/>
+                </SwiperSlide>
+            ));
+        }, [backgroundsImages.current]);
     }
 
     //Montaggio Ref Swiper
     const swiperRef = useRef(null);
     const onSwiper = (swiper) => {
         swiperRef.current = swiper; // Salva il riferimento allo swiper
+        swiper.on(
+            'slideChangeTransitionStart', () => {
+            // Azione al cambio slide
+            const previousSlide = swiper.slides[swiper.previousIndex];
+            previousSlide.style.transition = 'opacity 1.5s ease';
+            previousSlide.style.opacity = '0';
+        });
+        swiper.on('slideChangeTransitionEnd', () => {
+            // Ripristina l'opacità per la nuova slide in ingresso
+            const previousSlide = swiper.slides[swiper.previousIndex];
+            previousSlide.style.opacity = '1';
+        })
     };
 
     useEffect(()=>{
@@ -53,9 +66,8 @@ export default function Background({actualFloor, direction }) {
         cubeEffect={{shadow: false, slideShadows: false}}
         effect={"cube"}
         direction={'vertical'}
-        className="swiper"
+        className="swiper-home"
         enabled={"false"}
-
     >
         {RenderSwiperSlides()}
     </Swiper>
