@@ -16,14 +16,7 @@
 
 .play-icon {
     cursor: pointer; /* Cambia il cursore per indicare cliccabile */
-    height: 48px;
-    width: 48px;
-    z-index: 2;
-}
-
-.play-icon svg {
-    fill: white; /* Colore dell'icona */
-}
+    z-index: 2;}
 
 .actual-video {
     display: flex; /* Usare flexbox per disporre i pulsanti e il video */
@@ -47,7 +40,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;

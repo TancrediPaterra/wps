@@ -1,16 +1,12 @@
 
 .container-lavoro{
     position: relative;
-    /*display: flex;*/
-    /*grid-template-rows: 25vh 75vh; !* Prima riga occupa 1/4 (25vh), seconda riga 3/4 (75vh) *!*/
-    /*grid-template-columns: 25% 75%; !* La seconda riga è divisa in due colonne: 1/4 e 3/4 della larghezza *!*/
-    height: 100vh; /* Altezza totale della viewport */
+    height: 100vh;
     width: 100vw;
     overflow: hidden;
 }
 
 .header-lavoro{
-    /*grid-column: 1 / span 2;*/
     position: fixed;
     display: flex;
     gap: 65px;

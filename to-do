@@ -28,17 +28,25 @@
 [X] dimensione dinamica dei video
 [X] cornice al frame video
 [X] aumentare trasparenza bordi galleria
+[X] pulsanti  navigation cubo lavori
+[X] modificare font - RALEWAY LIGHT 300
 
-[] pulsanti  navigation cubo lavori
-[] fix scroll gallery
-[] componentizzare logo con già link dentro
+[X] aumentare opacità durante video
+[X] check dimensioni video in modo da non nascondere video
+[X] fix scroll gallery
+[X] componentizzare logo con già link dentro
+[X] favicon
 [] componentizzare menu con già gestione dello stato interna
-[] modificare font - RALEWAY LIGHT 300
-[] favicon
 
 [] refactor e semplificazione stile homepage
 
-[] Headless CMS con gestione dei dati
-    [] Come salvare le imamgini?
-[] installare cloudFire dal dns - gestione contenuti statici
-[] pre caricamento immagini
+[][]Headless CMS
+
+[][]Responsive
+
+[][]Produzione
+    []CloudFire in DNS - gestione contenuti statici
+
+[][]SEO
+
+[][]Analytics

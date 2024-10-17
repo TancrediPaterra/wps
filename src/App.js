@@ -4,7 +4,6 @@ import Gallery from "./Macro-Components/Gallery";
 import data from "./Assets/data.json";
 import {useState} from "react";
 import Lavoro from "./Macro-Components/Lavoro";
-import Contatti from "./Macro-Components/Contatti";
 
 function App() {
     const [isMenuOpen, setIsMenuOpen]= useState(false);
@@ -12,7 +11,7 @@ function App() {
         setIsMenuOpen(!isMenuOpen);
     }
 
-  return <Router>
+  return <Router forceRefresh={true}>
           <Routes>
               <Route path="/" element={<Home floors={data.floors} isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}/>} />
               <Route path="/lavori/" element={<Gallery lavori={data.lavori} isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}/>} />

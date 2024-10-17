@@ -21,7 +21,7 @@
     /*width: 100vw;*/
 }
 
-.logo {
+.logo-normale {
     margin-left: 82px;
     margin-top: 63px;
     height: 130px;
@@ -31,7 +31,6 @@
 .container-gallery {
     position: relative;
     height: 100vh;
-    overflow: hidden;
 }
 
 .header-gallery{

@@ -3,9 +3,11 @@ import ReactPlayer from 'react-player/youtube';
 // import PropTypes from 'prop-types';
 import {ReactComponent as ArrowLeft} from "../Assets/SVG/ArrowLeft.svg";
 import {ReactComponent as ArrowRight} from "../Assets/SVG/ArrowRight.svg";
-const VideoPlayer = ({ videos, showVideo, setShowVideo }) => {
+import {ReactComponent as PlayIcon} from "../Assets/SVG/PlayIcon.svg";
+const VideoPlayer = ({ lavoro, showVideo, setShowVideo }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    const videos = lavoro.videos;
     const handlePlayClick = () => {
         setShowVideo(true);
     };
@@ -24,15 +26,11 @@ const VideoPlayer = ({ videos, showVideo, setShowVideo }) => {
 
     // <div style={{"width":"100%"}}>
     return (<>
-            {videos.length > 0 && (
-                <div className="video-frame" style={{"backgroundImage":`url(${videos[currentIndex].thumbnailUrl})`}}>
-                    <div className="play-icon" onClick={handlePlayClick}>
-                        {/* Icona Play */}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="48px"
-                             height="48px">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
+            {videos?.length > 0 && (
+                <div className="video-frame" style={{"backgroundImage":`url(${lavoro.thumbnail})`}}>
+                    {/*<div className="play-icon" >*/}
+                        <PlayIcon onClick={handlePlayClick} className="play-icon"/>
+                    {/*</div>*/}
                     {showVideo && (
                         <div className="overlay" onClick={handleCloseClick}>
                             <div className="actual-video" onClick={(e) => e.stopPropagation()}>

@@ -1,8 +1,8 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useRef, useState} from "react";
 import {useParams} from "react-router-dom";
-import "../gallery.css"
-import "../lavoro.css"
-import "../videoPlayer.css"
+import "../Stylesheets/gallery.css"
+import "../Stylesheets/lavoro.css"
+import "../Stylesheets/videoPlayer.css"
 import HeaderLavoro from "../Components/HeaderLavoro";
 import {EffectCube, Pagination} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
@@ -18,7 +18,6 @@ import VideoPlayer from "../Components/VideoPlayer";
 function Lavoro({ lavori, toggleMenu, isMenuOpen }) {
     const { id } = useParams();
     const [showVideo, setShowVideo] = useState(false);
-    //TODO rendere null-safe
     const swiperRef = useRef(null);
     const onSwiper = (swiper) => {
         swiperRef.current = swiper; // Salva il riferimento allo swiper
@@ -36,40 +35,24 @@ function Lavoro({ lavori, toggleMenu, isMenuOpen }) {
         })
     };
     const lavoro= lavori.find((lav)=>lav.id===parseInt(id, 10));
-
     function renderImages(){
         return lavoro.images.map((img, index) => (
             <SwiperSlide key={index} className="swiper-slide-lavoro">
+                {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
                 <img src={`/Assets/Lavori_Images/${img}`} alt={`Image ${index}`} className="swiper-slide-img-home"/>
             </SwiperSlide>
         ))
     }
-
     function upHandler(){
-        if (!showVideo){
+        if (!showVideo && lavoro.images?.length>0){
             swiperRef.current.slidePrev(1300);
         }
     }
-
     function downHandler(){
-        if (!showVideo) {
+        if (!showVideo && lavoro.images?.length>0) {
             swiperRef.current.slideNext(1300)
         }
     }
-
-    const videos = [
-        {
-            videoUrl: 'https://www.youtube.com/watch?v=LXb3EKWsInQ',
-            thumbnailUrl: '/Assets/Salerno_01.JPG',
-            width:"1200px",
-            height:"800px"
-        }
-        ,{
-            videoUrl: 'https://www.youtube.com/watch?v=ivukpkSMoYQ',
-            width:"400px",
-            height:"1200px"
-    }];
-
 
     return <ReactScrollWheelHandler upHandler={upHandler} downHandler={downHandler} timeout={1300}>
         <div className={"container-lavoro"}>
@@ -79,9 +62,9 @@ function Lavoro({ lavori, toggleMenu, isMenuOpen }) {
                  <div className={"text-lavoro"}>
                      {lavoro.text}
                 </div>
-                <VideoPlayer videos={videos} showVideo={showVideo} setShowVideo={setShowVideo}/>
+                <VideoPlayer lavoro={lavoro} showVideo={showVideo} setShowVideo={setShowVideo}/>
             </div>
-            <div className={"content-lavoro"}>
+            {lavoro.images?.length>0 && <div className={"content-lavoro"}>
                 <Swiper
                     onSwiper={onSwiper}
                     modules={[EffectCube, Pagination]}
@@ -99,6 +82,7 @@ function Lavoro({ lavori, toggleMenu, isMenuOpen }) {
                     <ArrowDown onClick={downHandler} className={"nav-button-swiper-lavoro"}/>
                 </div>
             </div>
+            }
     </div>
     </ReactScrollWheelHandler>
 }

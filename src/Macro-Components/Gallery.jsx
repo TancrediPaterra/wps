@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import "../gallery.css"
+import "../Stylesheets/gallery.css"
 import GrigliaGallery from "../Components/GrigliaGallery";
 import {useParams} from "react-router-dom";
 import HeaderGallery from "../Components/HeaderGallery";

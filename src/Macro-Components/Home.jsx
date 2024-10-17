@@ -1,6 +1,6 @@
-import '../home.css';
+import '../Stylesheets/home.css';
 
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useState} from "react";
 import DiagonaleCubi from "../Components/DiagonaleCubi";
 import DiagonaleAree from "../Components/DiagonaleAree";
 
@@ -75,7 +75,7 @@ function Home({floors, isMenuOpen, toggleMenu}) {
 
     return <div className={"home"}>
         <ReactScrollWheelHandler upHandler={upHandler} downHandler={downHandler} timeout={1500}>
-            <Background actualFloor={state.floor} direction={state.direction}/>
+            <Background actualFloor={state.floor}/>
             <Logo className={"logo-grande"} onClick={()=>changeState(0)}/>
             <DiagonaleCubi floors={floors} actualFloor={state.floor} setFloor={changeState}/>
             <DiagonaleAree floors={floors} actualFloor={state.floor} setFloor={changeState}/>

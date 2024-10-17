@@ -43,7 +43,6 @@ body {
     pointer-events: none;
 }
 
-
 .cube{
     width: 19vh;
     height: 19vh;
@@ -145,7 +144,6 @@ body {
     opacity: 0.3;
 }
 
-
 .area-intervento:hover, .area-intervento:hover .button-titolo-area-intervento{
     color: white;
     opacity: 1;
@@ -177,7 +175,6 @@ body {
     width: auto;
     height: 25vh;
 }
-
 
 .scroller-box{
     position: absolute;

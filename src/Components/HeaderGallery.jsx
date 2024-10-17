@@ -1,15 +1,14 @@
 import MenuLaterale from "./MenuLaterale";
 import React from "react";
 import {ReactComponent as MenuIcon} from "../Assets/SVG/Menu.svg";
-import {ReactComponent as Logo} from "../Assets/SVG/Logo.svg";
 import {ReactComponent as BulletCube} from "../Assets/SVG/BulletCube.svg";
-import {Link, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
+import Logo from "./Logo";
 
 
 function HeaderGallery({isMenuOpen, toggleMenu}) {
     return <div className="header-gallery">
-        <Link to={"/"}><Logo className="logo"/></Link>
-
+        <Logo dimensione={"normale"}/>
         <div className={"box-nav-gallery"}>
             <BulletCube style={{height: "32px", width: "32px"}}/>
             <NavLink to={"/lavori"} end  className={"link-nav-gallery"}>Gallery</NavLink>

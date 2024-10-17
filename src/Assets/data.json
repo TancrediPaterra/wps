@@ -59,6 +59,19 @@
         "category": [
           "PERCORSI-E-ALLESTIMENTI",
           "AMBIENTI-AUDIOVISIVI"
+        ],
+        "thumbnail": "/Assets/Lavori_Images/Salerno_01.JPG",
+        "videos":[
+          {
+            "videoUrl": "https://www.youtube.com/watch?v=LXb3EKWsInQ",
+            "width":"1000px",
+            "height":"600px"
+          },
+          {
+            "videoUrl": "https://www.youtube.com/watch?v=ivukpkSMoYQ",
+            "width":"400px",
+            "height":"1200px"
+          }
         ]
       },
       {

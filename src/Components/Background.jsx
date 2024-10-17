@@ -10,12 +10,11 @@ import BACKGROUND_5 from "../Assets/BACKGROUNDS/BACKGROUND_HOME_GRAFICA_CLEAR.we
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-cube';
-import '../slider.css'
 import {EffectCube} from "swiper/modules";
 
 // Inizializza il modulo
 
-export default function Background({actualFloor, direction }) {
+export default function Background({actualFloor }) {
     const backgrounds:string[] =[BACKGROUND_0,BACKGROUND_1, BACKGROUND_2, BACKGROUND_3, BACKGROUND_4, BACKGROUND_5];
     const backgroundsImages=useRef([]);
 
@@ -32,7 +31,7 @@ export default function Background({actualFloor, direction }) {
                     <img src={img.src} alt={`Background ${index}`} className={"swiper-slide-img-home"} style={{opacity:"0.4"}}/>
                 </SwiperSlide>
             ));
-        }, [backgroundsImages.current]);
+        }, []);
     }
 
     //Montaggio Ref Swiper
